@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.lsac.androidTests.ChromeBase">
+      <class name="org.lsac.tests.VerifyJDAccountSignInTest">
         <methods>
-          <include name="setupCapabilities"/>
-          <include name="Hello"/>
+          <include name="signIn"/>
+          <include name="initialSetup"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- org.lsac.androidTests.ChromeBase -->
+      </class> <!-- org.lsac.tests.VerifyJDAccountSignInTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

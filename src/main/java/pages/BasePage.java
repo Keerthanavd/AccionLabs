@@ -8,6 +8,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,13 +17,13 @@ import org.testng.TestException;
 
 
 public class BasePage {
-WebDriver driver;
+RemoteWebDriver driver;
 @FindBy(id = "CybotCookiebotDialogBodyLevelButtonAccept")
 WebElement btn_AcceptCookie;
 //Constructor to pass driver object as well as to 
 //call initElements method of pageFactory.
 //Accepts cookiebot
-BasePage(WebDriver driver){
+BasePage(RemoteWebDriver driver){
 	this.driver=driver;
 	//initElements is used instead of driver.findElement
 	PageFactory.initElements(driver, this);

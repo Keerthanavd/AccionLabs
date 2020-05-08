@@ -2,20 +2,31 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import io.appium.java_client.pagefactory.AndroidFindBy;
+
 public class SigninPage extends BasePage{
-
-	@FindBy(css = "#logonIdentifier") WebElement txtfield_username;
-	@FindBy(css = "#password") WebElement txtfield_password;
-	@FindBy(css = "#next") WebElement btn_signin;
+	@AndroidFindBy(id = "logonIdentifier")
+	@FindBy(css = "#logonIdentifier") 
+	RemoteWebElement txtfield_username;
+	
+	@AndroidFindBy(id = "password") 
+	@FindBy(css = "#password") 
+	RemoteWebElement txtfield_password;
+	
+	@AndroidFindBy(id = "next")
+	@FindBy(css = "#next") 
+	RemoteWebElement btn_signin;
 
 	
 	
-	public SigninPage(WebDriver driver) {
+	public SigninPage(RemoteWebDriver driver) {
 		super(driver);
 		System.out.println(driver.getTitle());
 		Assert.assertTrue(driver.getTitle().contains("Sign In"), "Not in Sign In page");
